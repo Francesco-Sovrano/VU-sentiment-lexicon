@@ -46,21 +46,18 @@ def show_lexicons(language, path=None):
     if path is None:
       path = __module_dir
     lexicons, default_id, this_folder, folder_per_lang = load_lexicons(language, path)
-    print
-    print '#'*30
-    print 'Available lexicons for',language
+
+    print ('#'*30)
+    print ('Available lexicons for',language)
     for lex_id, (filename, description, resource) in lexicons.items():
         if lex_id == default_id:
-            print '  Identifier: "'+lex_id+'" (Default)'
+            print ('  Identifier: "'+lex_id+'" (Default)')
         else:
-            print '  Identifier:"'+lex_id+'"'
-        print '    Desc:',description.encode('utf-8')
-        print '     Res:',resource.encode('utf-8')
-        print '    File:',os.path.join(this_folder,folder_per_lang[language],filename.encode('utf-8'))
-        print
-    print '#'*30
-    print
-
+            print ('  Identifier:"'+lex_id+'"')
+        print ('    Desc:',description.encode('utf-8'))
+        print ('     Res:',resource.encode('utf-8'))
+        print ('    File:',os.path.join(this_folder,folder_per_lang[language],filename.encode('utf-8')))
+    print ('#'*30)
 
 class LexiconSent:
 
